@@ -41,3 +41,13 @@ INSERT INTO vuelos (codigo, origen, destino, fecha_salida, asientos_totales, asi
 ('AV-306', 'Ciudad de México', 'Bogotá', '2025-06-05 15:00:00', 190, 85, 920.00),
 ('AA-107', 'Bogotá', 'Quito', '2025-06-06 07:00:00', 100, 0, 280.00),
 ('LA-207', 'Quito', 'Bogotá', '2025-06-06 10:00:00', 100, 40, 270.00);
+
+--CONSULTAS 
+-- 1. Alerta de Vuelo Lleno
+SELECT * FROM vuelos WHERE asientos_disponibles < 5;
+
+-- 2. Incremento de Tarifas
+UPDATE vuelos SET precio_boleto = precio_boleto * 1.15 WHERE id = 1;
+
+-- 3. Depuración de Rutas Canceladas
+DELETE FROM vuelos WHERE asientos_disponibles = 0;
