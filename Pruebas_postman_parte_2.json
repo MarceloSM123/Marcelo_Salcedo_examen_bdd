@@ -1,0 +1,88 @@
+{
+  "info": {
+    "name": "Examen Vuelos API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Crear Vuelo",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"codigo\": \"AA-999\",\n    \"origen\": \"Bogotá\",\n    \"destino\": \"Madrid\",\n    \"fechaSalida\": \"2025-07-15T22:00:00\",\n    \"asientosTotales\": 280,\n    \"asientosDisponibles\": 200,\n    \"precioBoleto\": 1800.00\n}"
+        },
+        "url": {"raw": "http://localhost:8080/api/vuelos", "host": ["localhost"], "port": "8080", "path": ["api", "vuelos"]}
+      }
+    },
+    {
+      "name": "Listar Vuelos",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://localhost:8080/api/vuelos", "host": ["localhost"], "port": "8080", "path": ["api", "vuelos"]}
+      }
+    },
+    {
+      "name": "Buscar por ID",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://localhost:8080/api/vuelos/1", "host": ["localhost"], "port": "8080", "path": ["api", "vuelos", "1"]}
+      }
+    },
+    {
+      "name": "Actualizar Vuelo",
+      "request": {
+        "method": "PUT",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"codigo\": \"AA-999\",\n    \"origen\": \"Bogotá\",\n    \"destino\": \"Barcelona\",\n    \"fechaSalida\": \"2025-07-15T22:00:00\",\n    \"asientosTotales\": 280,\n    \"asientosDisponibles\": 150,\n    \"precioBoleto\": 1900.00\n}"
+        },
+        "url": {"raw": "http://localhost:8080/api/vuelos/1", "host": ["localhost"], "port": "8080", "path": ["api", "vuelos", "1"]}
+      }
+    },
+    {
+      "name": "Eliminar Vuelo",
+      "request": {
+        "method": "DELETE",
+        "url": {"raw": "http://localhost:8080/api/vuelos/20", "host": ["localhost"], "port": "8080", "path": ["api", "vuelos", "20"]}
+      }
+    },
+    {
+      "name": "Buscar por Precio Menor a",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://localhost:8080/api/vuelos/precio?precio=500", "host": ["localhost"], "port": "8080", "path": ["api", "vuelos", "precio"], "query": [{"key": "precio", "value": "500"}]}
+      }
+    },
+    {
+      "name": "Buscar por Asientos Disponibles",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://localhost:8080/api/vuelos/asientos?asientos=50", "host": ["localhost"], "port": "8080", "path": ["api", "vuelos", "asientos"], "query": [{"key": "asientos", "value": "50"}]}
+      }
+    },
+    {
+      "name": "Buscar por Origen",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://localhost:8080/api/vuelos/origen/Bogotá", "host": ["localhost"], "port": "8080", "path": ["api", "vuelos", "origen", "Bogotá"]}
+      }
+    },
+    {
+      "name": "Buscar por Destino",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://localhost:8080/api/vuelos/destino/Madrid", "host": ["localhost"], "port": "8080", "path": ["api", "vuelos", "destino", "Madrid"]}
+      }
+    },
+    {
+      "name": "Buscar por Código",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://localhost:8080/api/vuelos/codigo/AA-101", "host": ["localhost"], "port": "8080", "path": ["api", "vuelos", "codigo", "AA-101"]}
+      }
+    }
+  ]
+}
