@@ -8,6 +8,7 @@ public class VuelosApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(VuelosApplication.class, args);
+		System.out.println("=== API Examen Vuelos iniciada correctamente ===");
 	}
 
 }
